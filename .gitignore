@@ -1,0 +1,9 @@
+.zig-cache/
+zig-out/
+temp/
+fix_print.py
+*.exe
+*.pdb
+*.lib
+*.obj
+.DS_Store
