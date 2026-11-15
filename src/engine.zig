@@ -5,6 +5,7 @@ const std = @import("std");
 const dom = @import("dom.zig");
 const html = @import("html.zig");
 const css = @import("css.zig");
+const selector = @import("selector.zig");
 const layout_mod = @import("layout.zig");
 const render_mod = @import("render.zig");
 
@@ -45,11 +46,19 @@ pub const Engine = struct {
     /// Render to a pixel buffer (RGBA, width*height*4 bytes)
     pub fn render(self: *Engine, buffer: []u8, width: u32, height: u32) void {
         if (self.document) |doc| {
-            render_mod.paint(doc, buffer, width, height);
+            render_mod.renderDOM(doc, buffer, width, height, self.stylesheet);
         } else {
             // clear to white
             for (buffer) |*b| b.* = 255;
         }
+    }
+
+    /// Get computed style for a node
+    pub fn getStyle(self: *Engine, node: *dom.Node) !std.StringHashMap([]const u8) {
+        if (self.stylesheet) |*ss| {
+            return try selector.computeStyle(ss, node, self.allocator);
+        }
+        return std.StringHashMap([]const u8).init(self.allocator);
     }
 
     /// Get the document title
