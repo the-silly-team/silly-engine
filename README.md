@@ -1,20 +1,18 @@
-# silly engine
+# the silly engine
 
-a lightweight HTML/CSS/JS browser engine written in zig.
+a lightweight html/css/js browser engine written in zig.
 
 built for the silly browser and anyone who wants to render web pages without chromium.
 
 ## status
 
-🚧 **very early development** 🚧
-
-currently implements:
-- HTML parser (basic tags, attributes, text nodes)
-- CSS parser (rules, declarations, basic selectors)
-- DOM tree
+early development. currently implements:
+- html parser (basic tags, attributes, text nodes)
+- css parser (rules, declarations, basic selectors)
+- dom tree
 - block layout (elements stacked vertically)
-- basic renderer (paints to pixel buffer)
-- **Win32 GUI** (displays rendered output in a window)
+- basic text rendering (5x7 bitmap font)
+- win32 gui (displays rendered output in a window)
 
 ## building
 
@@ -28,45 +26,34 @@ zig build test   # run unit tests
 
 ## roadmap
 
-- [x] HTML parser
-- [x] CSS parser
-- [x] DOM tree
+- [x] html parser
+- [x] css parser
+- [x] dom tree
 - [x] block layout
-- [x] basic renderer (pixel buffer)
-- [x] Win32 GUI window
+- [x] basic text rendering (bitmap font)
+- [x] win32 gui window
 - [ ] inline layout (text flow)
-- [ ] CSS selector matching
+- [ ] css selector matching
 - [ ] style computation (cascade, inheritance)
 - [ ] text rendering (font metrics, actual glyphs)
-- [ ] JavaScript engine integration
-- [ ] network (HTTP client)
-- [ ] embeddable C API
+- [ ] javascript engine integration
+- [ ] network (http client)
+- [ ] embeddable c api
 - [ ] powers silly browser v2
 
 ## why zig?
 
 because it sounds silly. and we are all about silly.
 
-also it's fast, memory-safe, has great C interop, and doesn't have a garbage collector. perfect for a browser engine.
-
-## the corporate overlords
-
-the silly engine is a product of **brain liquidation inc.**, a fictional corporation whose primary business is supposedly liquidating brains. its subsidiaries include potato computing, the bread foundation, silly systems, neuron destruction llc, and nobro technologies.
-
-the ceo is half a braincell. the legal department is questionable. the financial department is bread-dependent. the stock ticker is BRAIN and the stock price is -999999%.
-
-applesoft has sued brain liquidation inc. for solidifying brains instead of liquidating them. nobro technologies has no bro. the bread foundation controls the entire economy.
-
-the breadening is inevitable. 🥖
+also it's fast, memory-safe, has great c interop, and doesn't have a garbage collector. perfect for a browser engine.
 
 ## license
 
-MIT
+mit
 
 <div align="center">
-  <p>built with <code>:3</code> and a concerning amount of coffee..... and also a tiny bit of brain liquidation</p>
+  <p>built with <code>:3</code> and a concerning amount of coffee.....</p>
   <p>
     <a href="https://github.com/the-silly-team">github.com/the-silly-team</a>
   </p>
-  <p><sub>the bread foundation remains operational 🥖</sub></p>
 </div>
