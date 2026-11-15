@@ -4,10 +4,10 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    // Main executable (demo app)
+    // Main executable (GUI demo)
     const exe = b.addExecutable(.{
         .name = "silly-engine",
-        .root_source_file = b.path("src/main.zig"),
+        .root_source_file = b.path("src/gui.zig"),
         .target = target,
         .optimize = optimize,
     });
